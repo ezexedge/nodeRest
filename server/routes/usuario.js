@@ -80,7 +80,7 @@ app.put('/usuario/:id', [verificaToken , verificaAdmin_Role] ,function (req, res
 let id = req.params.id
 let body = _.pick(req.body , ['nombre' , 'email' , 'img' , 'role' , 'estado']) 
 
-Usuario.findByIdAndUpdate(id,body, {new: true , runValidators: true},(err,usuariodb)=>{ //new lo que haces es poner en estado true cuando haya actualizado los datos del id
+Usuario.findByIdAndUpdate(id,body, {context: 'query' ,new: true , runValidators: true},(err,usuariodb)=>{ //new lo que haces es poner en estado true cuando haya actualizado los datos del id
 
 
 
