@@ -44,7 +44,26 @@ let verificaAdmin_Role = (req,res,next)=>{
 }
 
 
+let verificaTokenImg = (req,res,next)=>{
+let token = req.query.token
+
+if(err){
+	return res.status(401).json({
+		ok:false,
+		err: {
+			message: 'token no valido'
+		}
+	})
+}
+
+res.json({
+	token
+})
+
+}
+
 module.exports = {
 	verificaToken,
-	verificaAdmin_Role
+	verificaAdmin_Role,
+	verificaTokenImg
 }
