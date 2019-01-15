@@ -2,7 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 
-const {verificaToken} = require('../middlewares/autenticacion')
+const {verificaTokenImg} = require('../middlewares/autenticacion')
 
 let app = express()
 
